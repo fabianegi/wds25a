@@ -41,7 +41,7 @@
 
 ## 🧠 Über das Projekt
 
-Dieses Projekt ist im Rahmen meines Python-Kurses an der **[Name der Hochschule](https://www.example.com)** entstanden.  
+Dieses Projekt ist im Rahmen meines Python-Kurses an der **[DHBW](https://github.com/fabianegi/wds25a)** entstanden.  
 Ziel ist es, praxisnah Programmierkonzepte zu erlernen, eigene Lösungen zu entwickeln und die erarbeiteten Programme strukturiert in einem öffentlichen Repository zu präsentieren.
 
 > ✨ *Von den ersten "Hello World"-Programmen bis zu datengetriebenen Mini-Anwendungen – dieses Repo begleitet den gesamten Lernweg.*
@@ -75,7 +75,7 @@ Ziel ist es, praxisnah Programmierkonzepte zu erlernen, eigene Lösungen zu entw
 
 ```bash
 # Repository klonen
-git clone https://github.com/dein-benutzername/dein-repo.git
+git clone [https://github.com/fabianegi/wds25a]
 cd dein-repo
 
 # Virtuelle Umgebung erstellen
@@ -98,7 +98,7 @@ pip install -r requirements.txt
 Nach der Installation kannst du das Hauptprogramm starten:
 
 ```bash
-python main.py
+python hello.py
 ```
 
 Je nach Übungsabschnitt findest du verschiedene Teilprogramme im `src/` Verzeichnis.  
@@ -115,15 +115,10 @@ python src/uebung_03_rekursion.py
 ```plaintext
 📦 python-kurs
 ├─ 📁 src
-│  ├─ uebung_01_grundlagen.py
-│  ├─ uebung_02_schleifen.py
-│  ├─ uebung_03_rekursion.py
 │  └─ ...
 ├─ 📁 tests
-│  ├─ test_uebung_01.py
 │  └─ ...
-├─ requirements.txt
-├─ main.py
+├─ hello.py
 ├─ README.md
 └─ LICENSE
 ```
@@ -161,8 +156,8 @@ if __name__ == "__main__":
 ## 🗓 Roadmap
 
 * [x] Grundlagen Python
-* [x] Kontrollstrukturen & Funktionen
-* [x] Datenstrukturen & Fehlerbehandlung
+* [ ] Kontrollstrukturen & Funktionen
+* [ ] Datenstrukturen & Fehlerbehandlung
 * [ ] Objektorientierung
 * [ ] Datenanalyse mit Pandas
 * [ ] Mini-Projekt: Anwendung entwickeln
@@ -191,9 +186,9 @@ Dieses Projekt steht unter der **MIT-Lizenz** – siehe [LICENSE](LICENSE) Datei
 
 ## 📬 Kontakt
 
-📧 **Dein Name** – [deine.email@hochschule.de](mailto:deine.email@hochschule.de)  
-🌐 GitHub: [@dein-benutzername](https://github.com/dein-benutzername)
+📧 **Fabian** 
+🌐 GitHub: [@fabianegi](https://github.com/https://github.com/fabianegi)
 
 <p align="center">
-  <sub>© 2025 – Hochschule & Dein Name. Alle Rechte vorbehalten.</sub>
+  <sub>© 2025 – DHBW & Fabian. Alle Rechte vorbehalten.</sub>
 </p>
