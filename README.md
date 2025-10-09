@@ -98,7 +98,13 @@ pip install -r requirements.txt
 Nach der Installation kannst du das Hauptprogramm starten:
 
 ```bash
-python hello.py
+python main.py
+```
+
+Oder starte die kompakte Funktionen-Demo (leicht → schwer):
+
+```bash
+python functions_demo.py
 ```
 
 Je nach Übungsabschnitt findest du verschiedene Teilprogramme im `src/` Verzeichnis.  
@@ -148,7 +154,7 @@ if __name__ == "__main__":
 ## 🖼 Screenshots
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Beispiel+Screenshot" alt="Screenshot" width="80%"/>
+  <img src="https://www.dataquest.io/wp-content/uploads/2023/06/Run_Python_Code_PyCharm.png.webp" alt="Screenshot" width="80%"/>
 </p>
 
 ---
