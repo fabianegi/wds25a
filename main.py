@@ -30,3 +30,10 @@ c = [1, 2]
 s = c
 c.append(3)
 print(c, s)
+
+
+customer_list = ["Herr", "Bob", "2025-31-10", "TechCorp", ["item1", "item2"], "25", "Wirtschaftsinformatik", "2025-01-10", "2028-31-09", "Sportinformatik"]
+customer_dict = {"company_name": "TechCorp", "title": "Herr", "name": "Bob", "reg_date": "2025-31-10", "items": ["item1", "item2"], "age": 25, "Studiengang": "Wirtschaftsinformatik", "Start": "2025-01-10", "Ende": "2028-31-09", "Lieblingsfach": "Sportinformatik"}
+print(customer_dict["title"])
+print(customer_dict["Studiengang"])
+print(customer_dict["age"])
