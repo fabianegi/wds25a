@@ -83,3 +83,85 @@ print("Vor append: a =", a, ", b =", b)
 a.append(4)
 print("Nach append: a: a =", a, ", b =", b)
 print("Erläuterung: Listen sind mutable (veränderbar). a und b referenzieren dieselbe Liste, daher sieht b die Änderung.")
+
+print()
+print("Aufgabe 11: Fahrzeugdaten speichern")
+car_brand = "Audi"
+car_model = "A6"
+car_year = 2020
+car_price = 55000
+print(f"Das Fahrzeug {car_brand} {car_model} aus dem Jahr {car_year} kostet {car_price} Euro.")
+
+print()
+print("Aufgabe 12: Durchschnittsgeschwindigkeit berechnen")
+distance_km = 180
+time_h = 2
+avg_speed = distance_km / time_h
+print(f"Durchschnittsgeschwindigkeit: {avg_speed} km/h")
+
+print()
+print("Aufgabe 13: Umrechnung von Einheiten")
+speed_kmh = 100
+speed_ms = speed_kmh * 0.27778
+print(f"{speed_kmh} km/h sind {speed_ms:.2f} m/s")
+
+print()
+print("Aufgabe 14: Batteriekapazität bei E-Autos")
+battery_kwh = 82
+range_km = 600
+consumption_kwh_100km = battery_kwh / range_km * 100
+print(f"Energieverbrauch: {consumption_kwh_100km:.2f} kWh/100 km")
+
+print()
+print("Aufgabe 15: Fahrzeugbewertung")
+price = 48000
+power_hp = 200
+price_per_hp = price / power_hp
+print(f"Preis pro PS: {price_per_hp:.2f} Euro/PS")
+
+print()
+print("Aufgabe 16: Zeichenketten analysieren")
+car_name = "Mercedes-Benz EQS"
+int_test = 12
+print("Länge:", len(car_name))
+print("Großbuchstaben:", car_name.upper())
+print("Kleinbuchstaben:", car_name.lower())
+
+print()
+print("Aufgabe 17: Zeichenketten konkatenieren")
+brand = "Audi"
+model = "Q4 e-tron"
+year = 2026
+print(f"Das Modell {brand} {model} wurde {year} vorgestellt.")
+
+print()
+print("Aufgabe 18: Mit mehreren Datentypen arbeiten")
+car_dict = {"brand": "Tesla", "power": 325, "electric": True}
+print(f"Fahrzeugmarke: {car_dict['brand']}, Leistung: {car_dict['power']} PS, Elektrofahrzeug: {car_dict['electric']}")
+car_dict["electric"] = False
+print(f"Nach Update - Elektrofahrzeug: {car_dict['electric']}")
+
+print()
+print("Aufgabe 19: Durchschnittsverbrauch berechnen")
+fuel_used_l = 8.4
+distance_km = 120
+consumption_l_100km = fuel_used_l / distance_km * 100
+print(f"Verbrauch: {consumption_l_100km:.2f} Liter/100 km")
+
+print()
+print("Aufgabe 20: Plausibilitätscheck mit Typen")
+mileage = 45000
+price = "32000"
+print("mileage Typ:", type(mileage), "| price Typ:", type(price))
+print("mileage + price führt zu einem Fehler: TypeError - unsupported operand type(s) for +: 'int' and 'str'")
+price_int = int(price)
+sum_values = mileage + price_int
+print("Nach Typumwandlung (price -> int):", sum_values)
+
+print()
+print("Aufgabe ??: Positiv/Negativ prüfen")
+unkown_value = int(input("Gib eine Zahl ein: "))
+if unkown_value >= 0:
+    print(f"{unkown_value} ist positiv (inkl. 0 als positiv gezählt).")
+else:
+    print(f"{unkown_value} ist negativ.")
