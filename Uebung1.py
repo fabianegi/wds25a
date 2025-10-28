@@ -138,8 +138,9 @@ print()
 print("Aufgabe 18: Mit mehreren Datentypen arbeiten")
 car_dict = {"brand": "Tesla", "power": 325, "electric": True}
 print(f"Fahrzeugmarke: {car_dict['brand']}, Leistung: {car_dict['power']} PS, Elektrofahrzeug: {car_dict['electric']}")
-car_dict["electric"] = False
-print(f"Nach Update - Elektrofahrzeug: {car_dict['electric']}")
+# Wert von power ändern und Ausgabe wiederholen
+car_dict["power"] = 340
+print(f"Nach Update - Leistung: {car_dict['power']} PS")
 
 print()
 print("Aufgabe 19: Durchschnittsverbrauch berechnen")
@@ -165,3 +166,125 @@ if unkown_value >= 0:
     print(f"{unkown_value} ist positiv (inkl. 0 als positiv gezählt).")
 else:
     print(f"{unkown_value} ist negativ.")
+
+print()
+print("Aufgabe 2.6.1: Boolesche Ausdrücke")
+speed = 90
+limit = 100
+too_fast = speed > limit
+print(too_fast)
+
+print()
+print("Aufgabe 2.6.2: Kombination zweier Vergleiche")
+speed = 85
+rpm = 2200
+cond_and = (speed > 80) and (rpm < 3000)
+print(f"a) speed > 80 und rpm < 3000 -> {cond_and}")
+cond_or = (speed > 80) or (rpm < 3000)
+print(f"c) speed > 80 oder rpm < 3000 -> {cond_or}")
+
+print()
+print("Aufgabe 2.6.3: Bereichsprüfung mit logischen Operatoren")
+temperature = 95
+in_range_and = (temperature >= 80) and (temperature <= 100)
+print(f"a/b) 80 <= temperature <= 100 (via and) -> {in_range_and}")
+chained = 80 <= temperature <= 100
+print(f"c) 80 <= temperature <= 100 (verkettet) -> {chained}")
+
+print()
+print("Aufgabe 2.6.4: Kombination mehrerer Sensorbedingungen")
+speed = 110
+fuel_level = 8
+engine_on = True
+if speed > 100 and engine_on == True and fuel_level > 5:
+    print("a) speed>100 and engine_on==True and fuel_level>5 -> True")
+else:
+    print("a) speed>100 and engine_on==True and fuel_level>5 -> False")
+cases = [
+    {"speed": 110, "fuel_level": 8, "engine_on": True},
+    {"speed": 95,  "fuel_level": 8, "engine_on": True},
+    {"speed": 110, "fuel_level": 4, "engine_on": True},
+    {"speed": 110, "fuel_level": 8, "engine_on": False},
+]
+for case in cases:
+    result = (case["speed"] > 100) and (case["engine_on"] == True) and (case["fuel_level"] > 5)
+    print(f"Test {case} -> {result}")
+expr_or = (speed > 100) or (engine_on == True) or (fuel_level > 5)
+print(f"c) Mit or statt and -> {expr_or} (erfüllt, wenn mind. eine Bedingung wahr ist)")
+
+print()
+print("Aufgabe 2.6.5: Komplexer Ausdruck mit not, and, or")
+temperature = 102
+rpm = 3500
+oil_pressure = 1.2
+emergency_mode = False
+if ((temperature > 100) and (rpm > 3000)) or (oil_pressure < 1.5) or (not emergency_mode):
+    expr_ausdruck = True
+else:
+    expr_ausdruck = False
+print(f"(temperature>100 and rpm>3000) oder (oil_pressure<1.5) oder (not emergency_mode) -> {expr_ausdruck}")
+
+print()
+print("Aufgabe 2.6.6: Datentypüberprüfung und Wahrheitswerte")
+values = [0, 1, "", " Data ", [], [1, 2], None]
+for v in values:
+    print(v, bool(v))
+# Folgende Werte gelten in Python als 'falsy' (werden zu False), wenn es eine "leere" oder "null"-artige Repräsentation ist
+
+print()
+print("Aufgabe Verzweigungen 1")
+speed = 121
+if speed > 120:
+    print("Too fast! Slow down.")
+else:
+    print("Speed is ok.")
+
+print()
+print("Aufgabe Verzweigungen 2")
+battery_level = 19
+if battery_level < 20:
+    print("Warning: Low battery!")
+else:
+    print("Battery level sufficient.")
+
+print()
+print("Aufgabe Verzweigungen 3")
+temperature = 60
+if temperature < 60:
+    print("Freezing temperature!")
+elif 60 <= temperature <= 100:
+    print("Termperature normal.")
+else:
+    print("Warning Overheating!")
+
+print()
+print("Aufgabe Verzweigungen 4")
+score = 67
+if 100 >= score >= 90:
+    grade = "Excellent"
+elif 90 > score >= 75:
+    grade = "Good"
+elif 75 > score >= 60:
+    grade = "Satisfactory"
+elif 60 > score >= 40:
+    grade = "Needs improvement"
+else:
+    grade = "Insufficient"
+print(f"Ergebnis: {grade}")
+
+print()
+print("Aufgabe Verzweigungen 5")
+mode = "sport"
+speed = 130
+if mode == "sport":
+    if speed > 150:
+        print("Sport mode: maximum speed reached!")
+    else:
+        print("Sport mode: accelerating.")
+elif mode == "eco":
+    if speed > 100:
+        print("Eco mode: limit reached!")
+    else:
+        print("Eco mode: efficient driving.")
+else:
+    print("Unknown mode.")
