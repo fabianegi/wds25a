@@ -37,3 +37,17 @@ customer_dict = {"company_name": "TechCorp", "title": "Herr", "name": "Bob", "re
 print(customer_dict["title"])
 print(customer_dict["Studiengang"])
 print(customer_dict["age"])
+
+speed = [120, 130, 125, 140, 135, 150, 160]
+for s in speed:
+    if s > 140:
+        print(f"Das Fahrzeug ist {s - 140}km/h zu schnell.")
+    elif s <= 140:
+        print(f"Das Fahrzeug ist {max(0, 140 - s)}km/h zu langsam.")
+    else:
+        print(f"{s}km/h — Geschwindigkeit in Ordnung.")
+
+print()
+my_var = (1, 2, 3)
+x, y, z = my_var
+print(x, y, z)

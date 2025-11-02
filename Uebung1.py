@@ -288,3 +288,101 @@ elif mode == "eco":
         print("Eco mode: efficient driving.")
 else:
     print("Unknown mode.")
+
+print()
+print("Aufgabe Verzweigungen 6")
+temperature = 95
+pressure = 1.8
+system_active = True
+if system_active:
+    if temperature > 100:
+        print("Warning: High temperature!")
+    elif pressure < 1.5:
+        print("Pressure below threshold!")
+    else:
+        print("System running normally.")
+else:
+    print("System offline.")
+
+print()
+print("Aufgabe Verzweigungen 7")
+#a)
+# rpm > 3000 und speed > 100 und temperature > 100
+# speed > 100 und rpm <= 3000 fuel_level < 10
+# speed <= 100 oder rpm <= 3000 und fuel_level >= 10 oder rpm > 3000 und temperature <= 100
+
+#b), c)
+speed = 110
+rpm = 3200
+temperature = 105
+fuel_level = 8
+
+if speed > 100 and rpm > 3000 and temperature > 100:
+    print("Warning: High engine load!")
+elif speed > 100 and rpm > 3000 and temperature <= 100:
+    print("Engine warm, but temperature OK.")
+elif speed > 100 and rpm <= 3000 and fuel_level < 10:
+    print("Warning: Low fuel during high speed.")
+elif speed > 100 and rpm <= 3000 and fuel_level >= 10:
+    print("Normal operation.")
+else:
+    print("Speed below threshold.")
+
+print()
+print("Aufgabe for- und while-Schleifen 1")
+speeds = [50, 70, 90, 110]
+for s in speeds:
+    print(f"Current speed: {s} km/h")
+while speeds:
+    current_speed = speeds.pop(0)
+    print(f"Processing speed: {current_speed} km/h")
+
+print()
+print("Aufgabe for- und while-Schleifen 2")
+text = "Data"
+i = 0
+b = 0
+for char in text:
+    print(char)
+    i = i + 1
+print (f"The word has {i} letters.")
+while text:
+    char = text[0]
+    print(char)
+    text = text[1:] #entfernt das erste Zeichen aus text (verkürzt die Zeichenkette).
+    b = b + 1
+print (f"The word has {b} letters.")
+
+print()
+print("Aufgabe for- und while-Schleifen 3")
+car_data = {"speed" : 88, "rpm" : 3100, "fuel": 12.5}
+for key in car_data:
+    print(f"Keys: {key}")
+print()
+for value in car_data.values():
+    print(f"Values: {value}")
+print()
+for key, value in car_data.items():
+    print(f"{key} = {value}")
+
+print()
+print("Aufgabe Schleifensteuerung mit continue und break 4")
+speeds = [40, 60, 0, 80, 120, -1, 100]
+for s in speeds:
+    if s == 0:
+        print("Engine idle: skipping")
+        continue
+    if s < 0:
+        print("Negative speed: stopping processing")
+        break
+    else:
+        print(f"Speed OK: {s}")
+
+print()
+print("Kombination und pass und verschachtelte Schleifen 5")
+vehicles = {"Car A": ["speed", "rpm", "fuel"], "Car B": ["speed", "fuel"], "Car C": []}
+for vehicle, sensors in vehicles.items():
+    if not sensors:
+        pass
+    for sensor in sensors:
+        print(f"{vehicle}: {sensor}")
