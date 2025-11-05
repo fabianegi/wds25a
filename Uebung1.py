@@ -386,3 +386,110 @@ for vehicle, sensors in vehicles.items():
         pass
     for sensor in sensors:
         print(f"{vehicle}: {sensor}")
+        if vehicle == "Car A" and sensor == "fuel":
+            print("---")
+
+print()
+print("Funktionen Aufgabe 1")
+def verbrauch_rechner(energy, distance):
+    if distance <= 0:
+        return 0
+    return (energy / distance) * 100
+verbrauch1 = verbrauch_rechner(75, 500)
+verbrauch2 = verbrauch_rechner(70, 500)
+verbrauch3 = verbrauch_rechner(90, 500)
+print(f"Verbrauch 1: {verbrauch1} kWh/100km")
+print(f"Verbrauch 2: {verbrauch2} kWh/100km")
+print(f"Verbrauch 3: {verbrauch3} kWh/100km")
+
+print()
+print("Funktionen Aufgabe 2")
+def greet(name):
+    print(f"Hallo, {name}!")
+greet(str(input("Name: ")))
+
+print()
+print("Funktionen Aufgabe 3")
+distance_km = float(input("Distance: "))
+time_h = float(input("Time: "))
+def calculate_speed(distance_km, time_h):
+    gefahrene_strecke = distance_km / time_h
+    gefahrene_strecke = round(gefahrene_strecke, 1)
+    print(f"Speed: {gefahrene_strecke} km/h")
+calculate_speed(distance_km, time_h)
+
+print()
+print("Funktionen Aufgabe 4")
+def trip_info(vehicle, distance_km, time_h):
+    strecke = distance_km / time_h
+    print(f"Average speed: {strecke} km/h mit dem Vehicle: {vehicle}, completed successfully.")
+trip_info("BMW i4", 300, 1)
+trip_info("Audi e-tron", 250, 2.5)
+
+print()
+print("Funktionen Aufgabe 5")
+def change_value(x):
+    x = x + 5
+    print(f"Inside: {x}")
+value = 1
+change_value(value)
+print(f"Outside: {value}")
+# Der ursprüngliche Wert außerhalb der Funktion bleibt unverändert, da Integer unveränderlich sind.
+
+print()
+print("Funktionen Aufgabe 6")
+def add_measurement(measurements, new_value):
+    measurements.append(new_value)
+    print(f"Inside: {measurements}")
+data = [10, 20, 30]
+add_measurement(data, 40)
+print(f"Outside: {data}")
+# Die Liste wird auch außerhalb der Funktion geändert, da Listen mutable sind.
+
+print()
+print("Funktionen Aufgabe 7")
+def calculate_range(energy_kwh, consumption_kwh_100km):
+    range_km = (energy_kwh / consumption_kwh_100km) * 100
+    return range_km
+reichweite = calculate_range(82, 18)
+print(f"Reichweite: {reichweite:.2f} km")
+
+print()
+print("Funktionen Aufgabe 8")
+def trip_summary(distance, time, energy):
+    avg_speed = distance / time
+    efficiency = (energy / distance) * 100
+    return avg_speed, efficiency
+geschwindigkeit, effizienz = trip_summary(400, 5, 80)
+print(f"Average speed: {geschwindigkeit:.1f} km/h")
+print(f"Efficiency: {effizienz:.1f} kWh/100 km")
+
+print()
+print("Funktionen Aufgabe 9")
+def trip_summary(distance, time, energy):
+    avg_speed = distance / time
+    efficiency = (energy / distance) * 100
+    return [avg_speed, efficiency], {"avg_speed_kmh": avg_speed, "efficiency_kWh_100km": efficiency}
+summary = trip_summary(400, 5, 80)
+summary_list = trip_summary(400, 5, 80)
+print(f"Als Dict: {summary[1]}")
+print(f"Als Liste: {summary_list[0]}")
+
+print()
+print("Funktionen Aufgabe 10")
+def analyze_trip(trip_id, distance, time, energy):
+    avg_speed = distance / time
+    efficiency = (energy / distance) * 100
+    return {
+        "trip_id": trip_id,
+        "avg_speed_kmh": avg_speed,
+        "efficiency_kWh_100km": efficiency
+    }
+aufruf1 = analyze_trip("Trip001", 300, 4, 60)
+aufruf2 = analyze_trip("Trip002", 800, 6, 20)
+aufruf3 = analyze_trip("Trip003", 1250, 10, 120)
+trips = [aufruf1, aufruf2, aufruf3]
+for trip in trips:
+    print(f"Trip ID: {trip['trip_id']}, Average Speed: {trip['avg_speed_kmh']:.1f} km/h, Efficiency: {trip['efficiency_kWh_100km']:.1f} kWh/100 km")
+
+print()

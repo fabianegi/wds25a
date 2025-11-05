@@ -51,3 +51,65 @@ print()
 my_var = (1, 2, 3)
 x, y, z = my_var
 print(x, y, z)
+
+print()
+def calculate_distance(speedy, time):
+    distance = speedy * time
+    print(f"Distance: {distance}")
+
+calculate_distance(speedy = 90, time = 2)
+calculate_distance(speedy = 120, time = 1.5)
+
+print()
+def double_speed(speed):
+    speed = speed * 2
+    print(f"Inside: {speed}")
+
+def add_measurement(measurements, new_value):
+    measurements.append(new_value)
+    print(f"Inside: {measurements}")
+
+data = [10, 20, 30]
+add_measurement(data, 40)
+print(f"Outside: {data}")
+
+print()
+value = 100
+double_speed(value)
+print(f"Outside: {value}")
+
+#Veränderliche und unveränderliche Datentypen (siehe Code)
+print()
+def calculate_efficiency (distance_km , energy_kwh):
+    efficiency = (energy_kwh / distance_km) * 100
+    return efficiency
+result = calculate_efficiency (350 , 72)
+print (f"Energy efficiency: {result:.2f} kWh/100 km")
+
+print()
+def trip_summary (distance_km , time_h , energy_kwh):
+    avg_speed = distance_km / time_h
+    efficiency = (energy_kwh / distance_km) * 100
+    return avg_speed , efficiency
+geschwindigkeit, effi = trip_summary (400 , 5, 80)
+print (f"Average speed: {geschwindigkeit:.1f} km/h")
+print (f"Efficiency: {effi:.1f} kWh/100 km")
+
+print()
+def analyze_trip (distance_km , time_h , energy_kwh):
+    avg_speed = distance_km / time_h
+    efficiency = (energy_kwh / distance_km) * 100
+    return [avg_speed , efficiency]
+result = analyze_trip (300 , 4, 60)
+print (result)
+
+print()
+def analyze_trip_dict (distance_km , time_h , energy_kwh):
+    avg_speed = distance_km / time_h
+    efficiency = (energy_kwh / distance_km) * 100
+    return {
+        "avg_speed_kmh": avg_speed ,
+        "efficiency_kWh_100km": efficiency
+    }
+summary = analyze_trip_dict(300 , 4, 60)
+print (summary)
