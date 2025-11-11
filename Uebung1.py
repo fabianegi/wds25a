@@ -414,6 +414,7 @@ distance_km = float(input("Distance: "))
 time_h = float(input("Time: "))
 def calculate_speed(distance_km, time_h):
     gefahrene_strecke = distance_km / time_h
+    print(gefahrene_strecke)
     gefahrene_strecke = round(gefahrene_strecke, 1)
     print(f"Speed: {gefahrene_strecke} km/h")
 calculate_speed(distance_km, time_h)
@@ -493,3 +494,76 @@ for trip in trips:
     print(f"Trip ID: {trip['trip_id']}, Average Speed: {trip['avg_speed_kmh']:.1f} km/h, Efficiency: {trip['efficiency_kWh_100km']:.1f} kWh/100 km")
 
 print()
+print("Funktionen Aufgabe 11")
+def calculate_consumption(distance_km, energy_kwh=70):
+    consumption_kwh_100km = (energy_kwh / distance_km) * 100
+    return consumption_kwh_100km
+verbrauch1 = calculate_consumption(500)
+verbrauch2 = calculate_consumption(500, 65)
+print(f"Verbrauch mit Standardenergie (70 kWh): {verbrauch1:.2f} kWh/100km")
+print(f"Verbrauch mit angegebener Energie (65 kWh): {verbrauch2:.2f} kWh/100km")
+
+print()
+print("Funktionen Aufgabe 12")
+def vehicle_info(model, year, color):
+    print(f"Model: {model}, Year: {year}, Color: {color}")
+vehicle_info(model="BMW i4", year=2022, color="Blue")
+vehicle_info(color="Red", model="Audi e-tron", year=2021)
+vehicle_info("Mercedes EQS", color="Black", year=2023)
+
+print()
+print("Funktionen Aufgabe 13")
+def calculate_average(*values):
+    total = sum(values)
+    print(f"Total: {total}:.2f")
+    return total / len(values)
+calculate_average(10, 20, 30)
+calculate_average(5, 15, 25, 35, 45)
+
+print()
+print("Funktionen Aufgabe 14")
+def print_info(**data):
+    for key, value in data.items():
+        print(f"{key}: {value}")
+print_info(brand="Tesla", model="Model S", power=670)
+print_info(model="Nissan Leaf", battery_kwh=40, range_km=270)
+
+print()
+print("Funktionen Aufgabe 15")
+def create_report(title, *sections, **metadata):
+    print(f"Report Title: {title}")
+    print("Sections:")
+    for section in sections:
+        print(f"- {section}")
+    print("Metadata:")
+    for key, value in metadata.items():
+        print(f"{key}: {value}")
+create_report("Vehicle Performance","Speed Analysis", "Energy Consumption", author="John Doe", date="2024-06-01")
+
+print()
+print("Funktionen Aufgabe 16")
+def data_collector():
+    status = "waiting"
+    print("NV initialer Status:", status)
+    def start_collection():
+        nonlocal status
+        status = "recording"
+        print("NV innerer Status:", status)
+    start_collection()
+    print("NV nach innerem Aufruf:", status)
+    return status
+result = data_collector()
+print("NV zurückgegebener Status:", result)
+print()
+global_status = "waiting"
+def global_demo():
+    print("GV Status vor innerem Aufruf (modulweit):", global_status)
+    def start_collection2():
+        global global_status
+        global_status = "recording"
+        print("GV innerer Status (änderte globale Variable):", global_status)
+    start_collection2()
+    print("GV Status nach innerem Aufruf (modulweit):", global_status)
+print("Modul-Variable global_status vor global_demo():", global_status)
+global_demo()
+print("Modul-Variable global_status nach global_demo():", global_status)

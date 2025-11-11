@@ -113,3 +113,27 @@ def analyze_trip_dict (distance_km , time_h , energy_kwh):
     }
 summary = analyze_trip_dict(300 , 4, 60)
 print (summary)
+
+print()
+def calculate_efficiency (distance_km , energy_kwh = 70):
+    efficiency = (energy_kwh / distance_km) * 100
+    return efficiency
+default_result = calculate_efficiency (350)
+print (default_result)
+custom_result = calculate_efficiency (350 , 80)
+print (custom_result)
+
+print()
+def calculate_average (*values):
+    total = 0
+    for v in values :
+        total += v
+    return total / len(values)
+print(f"{calculate_average(10 , 20 , 30):.0f}")
+print(calculate_average(5, 10 , 15 , 20))
+
+print()
+def print_vehicle_info (**data):
+    for key, value in data.items():
+        print(f"{key}: {value}")
+print_vehicle_info(model ="eActros 600", speed = 80 , battery = 72)
