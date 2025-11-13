@@ -137,3 +137,9 @@ def print_vehicle_info (**data):
     for key, value in data.items():
         print(f"{key}: {value}")
 print_vehicle_info(model ="eActros 600", speed = 80 , battery = 72)
+
+def trip_summary (distance_km : float, time_h : float, energy_kwh :
+                                    float) -> tuple [float , float]:
+    avg_speed = distance_km / time_h
+    efficiency = (energy_kwh / distance_km) * 100
+    return avg_speed , efficiency

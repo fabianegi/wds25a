@@ -567,3 +567,62 @@ def global_demo():
 print("Modul-Variable global_status vor global_demo():", global_status)
 global_demo()
 print("Modul-Variable global_status nach global_demo():", global_status)
+
+print()
+print("Funktionen Aufgabe 17")
+counter = 0  # globale Variable
+def increase_counter():
+    global counter  # nötig für Schreibzugriff
+    counter += 1
+    print(f"counter: {counter}")
+    return counter
+print("Startwert:", counter)
+increase_counter()
+increase_counter()
+
+print()
+print("Funktionen Aufgabe 18")
+def data_collector():
+    status = "waiting"
+    print("Initialer Status:", status)
+    def start_collection():
+        nonlocal status
+        status = "recording"
+    start_collection()
+    return status
+result = data_collector()
+print("Zurückgegebener Status:", result)
+
+print()
+print("Funktionen Aufgabe 19")
+def temporary_value():
+    temp = 42
+    print("temp inside:", temp)
+    return temp
+value1 = temporary_value()
+value2 = temporary_value()
+print("value1 == value2:", value1 == value2)
+# Ergebnis: True (beide Aufrufe erzeugen temp neu mit dem gleichen Wert),
+# aber der lokale name `temp` existiert nicht mehr außerhalb der Funktion.
+
+print()
+print("Funktionen Aufgabe 20")
+def calculate_efficiency(energy_kwh: float, distance_km: float) -> float:
+    berechnung_die_3 = (energy_kwh / distance_km) * 100
+    print(f"Efficiency: {berechnung_die_3} kWh/100km")
+    return berechnung_die_3
+effizienz5 = calculate_efficiency(75, 500)
+
+print()
+print("Funktionen Aufgabe 21")
+def average_speed(speeds: list[float]) -> float:
+    total = sum(speeds)
+    avg = total / len(speeds)
+    print(f"Average speed: {avg} km/h")
+    return avg
+def summarize_trip(trip: dict[str, float]) -> str:
+    print(f"{trip['distance']}km, {trip['energy']}kWh")
+average_speed([80.445, 100.45, 180.8])
+summarize_trip({"distance": 300, "energy": 60})
+
+print()
