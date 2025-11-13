@@ -626,3 +626,4 @@ average_speed([80.445, 100.45, 180.8])
 summarize_trip({"distance": 300, "energy": 60})
 
 print()
+print("Werkstatt- und Nutzungsanalyse elektrischer Nutzfahrzeuge - Aufgabe 22")
