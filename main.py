@@ -143,3 +143,15 @@ def trip_summary (distance_km : float, time_h : float, energy_kwh :
     avg_speed = distance_km / time_h
     efficiency = (energy_kwh / distance_km) * 100
     return avg_speed , efficiency
+
+# KLASSEN!"§!"§!"§!"§
+print()
+class Vehicle:
+    def __init__ (self, fin, model, year, milleage_km):
+        self.fin = fin
+        self.model = model
+        self.year = year
+        self.milleage_km = milleage_km
+
+vehicle1 = Vehicle("WDB1234567890", "BMW M3 G80 Competition", 2024, 15000)
+print (vehicle1.model)

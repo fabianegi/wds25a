@@ -637,36 +637,29 @@ def load_vehicle_data(file_path: str) -> list[dict] | None:
             raw: Any = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return None
-
     if not raw:
         return None
-
     if isinstance(raw, dict):
         vehicles = raw.get("vehicles")
     else:
         vehicles = raw
-
     if not isinstance(vehicles, list) or len(vehicles) == 0:
         return None
-
     return vehicles
-
 
 def summarize_fleet(vehicles: list[dict]) -> None:
     count = len(vehicles)
     avg_year = sum(v["year"] for v in vehicles) / count
     avg_mileage = sum(v["mileage_km"] for v in vehicles) / count
-
-    print("=== Flottenübersicht ===")
+    print("Datei konnte ausgelesen werden.")
+    print("\nFlottenübersicht")
     print(f"Anzahl Fahrzeuge: {count}")
     print(f"Durchschnittsbaujahr: {avg_year:.1f}")
     print(f"Durchschnittliche Laufleistung (km): {avg_mileage:.0f}")
 
-
 def calculate_total_workshop_costs(vehicle: dict) -> float:
     visits = vehicle.get("workshop_visits", [])
     return sum(v["cost_eur"] for v in visits)
-
 
 def average_workshop_costs(vehicle: dict) -> float | None:
     visits = vehicle.get("workshop_visits", [])
@@ -675,17 +668,17 @@ def average_workshop_costs(vehicle: dict) -> float | None:
     total = calculate_total_workshop_costs(vehicle)
     return total / len(visits)
 
+def gesamt() -> None:
+    file_path = "/Users/user/PycharmProjects/wds25a/vehicles.json"
+    vehicles = load_vehicle_data(file_path)
 
-file_path = "/Users/user/PycharmProjects/wds25a/vehicles.json"
+    if vehicles is None:
+        print("Fahrzeugdaten konnten nicht geladen werden.")
+        return
 
-vehicles = load_vehicle_data(file_path)
-
-if vehicles is None:
-    print("Fahrzeugdaten konnten nicht geladen werden.")
-else:
     summarize_fleet(vehicles)
 
-    print("\n=== Werkstattkosten pro Fahrzeug ===")
+    print("\nWerkstattkosten pro Fahrzeug")
     for v in vehicles:
         total = calculate_total_workshop_costs(v)
         avg = average_workshop_costs(v)
@@ -697,3 +690,6 @@ else:
                 f"{v['model']}: Gesamt {total:.2f} EUR, "
                 f"Durchschnitt pro Besuch {avg:.2f} EUR"
             )
+
+gesamt()
+#Code von ChatGPT gemacht wurden => Aufgabe 22
