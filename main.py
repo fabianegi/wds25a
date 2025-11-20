@@ -145,13 +145,27 @@ def trip_summary (distance_km : float, time_h : float, energy_kwh :
     return avg_speed , efficiency
 
 # KLASSEN!"§!"§!"§!"§
-print()
-class Vehicle:
-    def __init__ (self, fin, model, year, milleage_km):
+print("\nKlassen Demo")
+class Vehicles:
+    def __init__ (self, fin, model, year, mileage_km):
         self.fin = fin
         self.model = model
         self.year = year
-        self.milleage_km = milleage_km
+        self.mileage_km = mileage_km
+
+    def drive(self, distance_km):
+        self.mileage_km = self.mileage_km + distance_km
+
 
 vehicle1 = Vehicle("WDB1234567890", "BMW M3 G80 Competition", 2024, 15000)
-print (vehicle1.model)
+print(vehicle1.model)
+print(vehicle1.mileage_km)
+
+vehicle2 = Vehicle("WDB0987654321", "Audi RS5", 2023, 22000)
+print(vehicle2.model)
+print(vehicle2.mileage_km)
+
+vehicle1.drive(15000)
+print(vehicle1.mileage_km)
+vehicle2.drive(2000)
+print(vehicle2.mileage_km)

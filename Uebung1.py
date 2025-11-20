@@ -693,3 +693,51 @@ def gesamt() -> None:
 
 gesamt()
 #Code von ChatGPT gemacht wurden => Aufgabe 22
+
+print()
+print("Attribute und Methoden Aufgabe 1, 2, 3, 4, 5, 6")
+#4
+class Engine:
+    def __init__(self, horsepower: int, cylinder: int, is_running: bool = False):
+        self.horsepower = horsepower
+        self.cylinder = cylinder
+        self.is_running = is_running
+#1, 2, 3
+class Vehicle:
+    def __init__(self, brand: str, model: str, year: int, engine: Engine):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.mileage_km = 0
+        self.speed = 0
+        self.engine = engine
+
+    def info(self):
+        if self.engine is None:
+            print(f"Info: {self.brand} {self.model} ({self.year}), Mileage: {self.mileage_km} km, Speed: {self.speed}km/h")
+        else:
+            print(f"Info: {self.brand} {self.model} ({self.year}), Mileage: {self.mileage_km} km, Speed: {self.speed}km/h, Engine: {self.engine.horsepower} PS, {self.engine.cylinder} Zylinder, Running: {self.engine.is_running}")
+
+    def drive(self, distance_km: float) -> str:
+        self.mileage_km += distance_km
+        return f"Zusätzliche gefahren {distance_km} km. Insgesamt gefahren jetzt {self.mileage_km}km."
+
+    def start(self):
+        self.engine.is_running = True
+    def stop(self):
+        self.engine.is_running = False
+
+vehicle1 = Vehicle("Mercedes Benz", "Actros LH", year = 2025, engine = None)
+vehicle1.info()
+print(vehicle1.drive(9867))
+
+engine1 = Engine(170, 6)
+print(f"Engine horsepower: {engine1.horsepower} PS, Cylinders: {engine1.cylinder}, Is running: {engine1.is_running}")
+#5
+vehicle2 = Vehicle("Mercedes Benz", "Actros LH", 2025, engine1)
+vehicle2.info()
+#6
+vehicle2.start()
+print(f"Der Motor ist: {vehicle2.engine.is_running} (True = läuft, False = aus)")
+vehicle2.stop()
+print(f"Der Motor ist: {vehicle2.engine.is_running} (True = läuft, False = aus)")
