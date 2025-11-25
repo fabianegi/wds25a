@@ -41,8 +41,8 @@ class Truck:
         print(f"{self.name} lädt {depot.provide_goods(amount)} Paletten aus dem {depot.name} auf.")
 
     def unload_to_depot(self, depot: Depot, amount: int) -> None:
-        if amount > depot.stock:
-            raise ValueError(f"{self.name} kann nur {self.load} Paletten entladen (Depot leer).")
+        if amount > self.load:
+            raise ValueError(f"Der {self.name} hat nur {self.load} Paletten geladen, kann aber nicht {amount} Paletten entladen.")
         self.load -= amount
         print(f"{self.name} entlädt {amount} Paletten im {depot.name}.")
 
